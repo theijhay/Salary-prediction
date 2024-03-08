@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 
+@st.cache_data 
 def load_model():
     data = joblib.load('saved_steps.joblib')
     return data
