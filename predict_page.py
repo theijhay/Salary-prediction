@@ -1,11 +1,9 @@
 import streamlit as st
-import pickle
 import numpy as np
-
+import joblib
 
 def load_model():
-    with open('saved_steps.pkl', 'rb') as file:
-        data = pickle.load(file)
+    data = joblib.load('saved_steps.joblib')
     return data
 
 data = load_model()
@@ -36,24 +34,32 @@ def show_predict_page():
         "Sweden",
     )
 
-    education = (
+    education_levels = (
         "Less than a Bachelors",
         "Bachelor’s degree",
         "Master’s degree",
-        "Post grad",
+        "Associate degree",
+        "Professional degree",
+        "Other doctoral degree",
     )
 
     country = st.selectbox("Country", countries)
-    education = st.selectbox("Education Level", education)
+    education = st.selectbox("Education Level", education_levels)
 
-    expericence = st.slider("Years of Experience", 0, 50, 3)
+    experience = st.slider("Years of Experience", 0, 50, 3)
 
     ok = st.button("Calculate Salary")
     if ok:
-        X = np.array([[country, education, expericence ]])
-        X[:, 0] = le_country.transform(X[:,0])
-        X[:, 1] = le_education.transform(X[:,1])
+        # Convert input to array for prediction
+        X = np.array([[country, education, experience]])
+        X[:, 0] = le_country.transform(X[:, 0])
+        X[:, 1] = le_education.transform(X[:, 1])
         X = X.astype(float)
 
+        # Predict salary
         salary = regressor.predict(X)
         st.subheader(f"The estimated salary is ${salary[0]:.2f}")
+
+# Run the app
+if __name__ == "__main__":
+    show_predict_page()
