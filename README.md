@@ -13,7 +13,7 @@
 $ pip install -r requirements.txt
 
 # Setup
-- Create the project directory
+Create the project directory
 $ mkdir Salary-prediction 
 
 # Navigate to the project directory
