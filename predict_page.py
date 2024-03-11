@@ -1,8 +1,9 @@
 import streamlit as st
 import numpy as np
 import joblib
+from sklearn.tree import DecisionTreeRegressor
 
-@st.cache_data 
+@st.cache_data
 def load_model():
     data = joblib.load('saved_steps.joblib')
     return data
