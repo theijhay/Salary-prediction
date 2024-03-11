@@ -33,10 +33,7 @@ But in this case I used conda environment.
 $ conda create -n ml python=3.11
 
 # Activate the environment
-'''
-bash
-$ conda activate ml
-,,,
+'$ conda activate ml'
 
 4. Data Analysis and Model Development
 Data Collection:
