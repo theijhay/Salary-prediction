@@ -35,7 +35,7 @@ $ conda create -n ml python=3.11
 # Activate the environment
 $ conda activate ml
 
-4. Data Analysis and Model Development
+# Data Analysis and Model Development
 Data Collection:
 Download the real-world dataset(s) and place it in the data directory.
 

@@ -1,23 +1,23 @@
 import streamlit as st
 import numpy as np
 import joblib
-from sklearn.tree import DecisionTreeRegressor
 
 @st.cache_data
 def load_model():
-    data = joblib.load('saved_steps.joblib')
-    return data
+    with open('saved_steps.joblib', 'rb') as file:
+        loaded_data = joblib.load(file)
+    return loaded_data
 
 data = load_model()
 
-regressor = data["model"]
-le_country = data["le_country"]
-le_education = data["le_education"]
+regressor_loaded = data["model"]
+le_country_loaded = data["le_country"]
+le_education_loaded = data["le_education"]
 
 def show_predict_page():
     st.title("Software Developer Salary Prediction.")
 
-    st.write("""Select some information to predict the salary""")
+    st.write("""Input the necessary information for salary prediction""")
 
     countries = (
         "United States",
@@ -50,16 +50,16 @@ def show_predict_page():
 
     experience = st.slider("Years of Experience", 0, 50, 3)
 
-    ok = st.button("Calculate Salary")
+    ok = st.button("Calculate the Salary")
     if ok:
         # Convert input to array for prediction
         X = np.array([[country, education, experience]])
-        X[:, 0] = le_country.transform(X[:, 0])
-        X[:, 1] = le_education.transform(X[:, 1])
+        X[:, 0] = le_country_loaded.transform(X[:, 0])
+        X[:, 1] = le_education_loaded.transform(X[:, 1])
         X = X.astype(float)
 
         # Predict salary
-        salary = regressor.predict(X)
+        salary = regressor_loaded.predict(X)
         st.subheader(f"The estimated salary is ${salary[0]:.2f}")
 
 # Run the app
