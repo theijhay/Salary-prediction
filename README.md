@@ -67,11 +67,11 @@ there we play around with the data and train our model.
 So we also want to install a kernel for this virtue environment.
 but maybe in your own case you may need to install ipython before running this command.
 
-$ipyhon kernel install --user --name=ml
+$ ipyhon kernel install --user --name=ml
 
 Now we can start our jupyter notebook server
 
-$jupyter notebook
+$ jupyter notebook
 
 Note: This command will automatically take you to where you will train your model
 and then you click on new notebook and select ml. You can find the file in the repository.
