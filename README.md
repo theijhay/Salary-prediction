@@ -32,6 +32,13 @@ $ mkdir Salary-prediction
 
 $ cd Salary-prediction
 
+# Data Collection
+
+Download the real-world dataset(s) and place it in the data directory.
+
+[Stack Overflow Survey Data](https://insights.stackoverflow.com/survey)
+
+
 - Create a virtue evironment for the project
 
 $ python3 -m venv venv
@@ -82,14 +89,3 @@ column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which i
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
 
 ![alt text](<Screenshot from 2024-03-29 17-54-24.png>)
-
-
-# Data Analysis and Model Development
-
-- Data Collection
-
-Download the real-world dataset(s) and place it in the data directory.
-
-[Stack Overflow Survey Data](https://insights.stackoverflow.com/survey)
-
-# Data Analysis
