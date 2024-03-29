@@ -23,27 +23,27 @@ The Machine Learning Web Application provides a user-friendly interface for inte
 
 $ pip install -r requirements.txt
 
-# Setup
+- Setup
 Create the project directory
 
 $ mkdir Salary-prediction 
 
-# Navigate to the project directory
+- Navigate to the project directory
 $ cd Salary-prediction
 
-# Create a virtue evironment for the project
+- Create a virtue evironment for the project
 $ python3 -m venv venv
 
-# Active the virtue environment
+- Active the virtue environment
 $ source venv/bin/activate 
 
 But in this case I used conda environment.
 - Click on this link [conda](https://docs.anaconda.com/free/miniconda/#quick-command-line-install) to install it.
 
-## Create a new environment name "ml" with Python3.11 version
+- Create a new environment name "ml" with Python3.11 version
 $ conda create -n ml python=3.11
 
-# Activate the environment
+- Activate the environment
 $ conda activate ml
 
 # Install the packages
