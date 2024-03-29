@@ -54,6 +54,7 @@ $ conda activate ml
 # Install the packages
 
 $ conda install streamlit
+
 $ conda install numpy pandas
 
 So we need some more so we say
