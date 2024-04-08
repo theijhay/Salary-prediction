@@ -110,16 +110,39 @@ $ jupyter notebook
 This command will automatically take you to where you will train your model
 and then you click on new notebook and select ml, and start importing the librabries needed for project. You can find the file in the repository.
 
-# import libraries
+# Testing/running 
+- To run the web app locally, follow these steps:
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, mean_absolute_error
-from sklearn.model_selection import GridSearchCV
-import joblib
-import numpy as np
+# Clone the repository
+$ git clone https://github.com/theijhay/Salary-prediction.git
+
+# Navigate to the project directory
+$ cd salary-prediction
+
+# Install the required dependencies
+$ pip install -r requirements.txt
+
+# Usage
+- Start the Streamlit app
+
+$ streamlit run app.py
+
+- Open a web browser and navigate to the provided local URL to access the web app.
+- Enter the required information such as years of experience, education level, and job title.
+- Click on the "Predict Salary" button to view the estimated salary range for the specified job parameters.
+
+# Contributing
+
+- Contributions to the project are welcome! To contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature-branch).
+3. Make your changes and commit them (git commit -am 'Add new feature').
+4. Push to the branch (git push origin feature-branch).
+5. Create a new Pull Request and describe your changes.
+
+# Bug Fixes
+None yet.
+
+# Licensing
+This project is licensed under the MIT License - see the LICENSE file for details.
