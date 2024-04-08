@@ -91,16 +91,6 @@ $ jupyter notebook
 Note: This command will automatically take you to where you will train your model
 and then you click on new notebook and select ml. You can find the file in the repository.
 
-# Data Analysis
-
-- Navigate to the project directory
-
-$ cd Salary-prediction
-
-- Run Jupyter notebooks for data analysis and model development.
-
-$ jupyter notebook
-
 
 # Data cleaning
 Firstly, we only want to keep a few columns so we want to keep the 
@@ -110,3 +100,27 @@ of the years of the professional experience, 'Employment' for example if the dev
 ![alt text](<DataCleaning.png>)
 
 
+# Data Analysis
+
+- Navigate to the project directory
+
+$ cd Salary-prediction
+
+- Run Jupyter notebooks for data analysis and training of the model.
+
+$ jupyter notebook
+
+This command will automatically take you to where you will train your model
+and then you click on new notebook and select ml, and start importing the librabries needed for project. You can find the file in the repository.
+
+
+# Save the trained model
+In this case I saved the trained model using joblib
+![alt text](<save.png>)
+
+
+# Load the Trained Model
+- Load your trained machine learning model into the Streamlit app
+![alt text](<load.png>)
+
+# Testing
