@@ -100,6 +100,7 @@ of the years of the professional experience, 'Employment' for example if the dev
 - Select relevant columns
 
 df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
+
 df = df.rename({"ConvertedComp": "Salary"}, axis=1)
 
 # Data Analysis
