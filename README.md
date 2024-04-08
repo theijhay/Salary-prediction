@@ -97,8 +97,9 @@ Firstly, we only want to keep a few columns so we want to keep the
 column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which is the number 
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
 
-![alt text](<DataCleaning.png>)
-
+- Select relevant columns
+df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
+df = df.rename({"ConvertedComp": "Salary"}, axis=1)
 
 # Data Analysis
 
@@ -116,11 +117,10 @@ and then you click on new notebook and select ml, and start importing the librab
 
 # Save the trained model
 In this case I saved the trained model using joblib
-![alt text](<save.png>)
+
 
 
 # Load the Trained Model
 - Load your trained machine learning model into the Streamlit app
-![alt text](<load.png>)
 
 # Testing
