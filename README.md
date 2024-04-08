@@ -98,6 +98,7 @@ column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which i
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
 
 - Select relevant columns
+
 df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
 df = df.rename({"ConvertedComp": "Salary"}, axis=1)
 
