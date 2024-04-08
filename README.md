@@ -97,12 +97,6 @@ Firstly, we only want to keep a few columns so we want to keep the
 column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which is the number 
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
 
-- Select relevant columns
-
-df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
-
-df = df.rename({"ConvertedComp": "Salary"}, axis=1)
-
 # Data Analysis
 
 - Navigate to the project directory
@@ -116,13 +110,16 @@ $ jupyter notebook
 This command will automatically take you to where you will train your model
 and then you click on new notebook and select ml, and start importing the librabries needed for project. You can find the file in the repository.
 
+# import libraries
 
-# Save the trained model
-In this case I saved the trained model using joblib
-
-
-
-# Load the Trained Model
-- Load your trained machine learning model into the Streamlit app
-
-# Testing
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.model_selection import GridSearchCV
+import joblib
+import numpy as np
