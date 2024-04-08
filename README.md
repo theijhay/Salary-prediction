@@ -1,5 +1,7 @@
 # Machine Learning Web Application
 
+[text](https://imgur.com/a/GIErJNS)
+
 # Introduction
 Welcome to the Salary Prediction Web App! This project utilizes machine learning to predict salaries based on user input such as years of experience, education level, and job title. The web app provides an intuitive interface for users to obtain estimated salary ranges for various job positions.
 
