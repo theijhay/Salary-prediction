@@ -14,7 +14,9 @@ The Machine Learning Web Application provides a user-friendly interface for inte
 - Enhance user understanding of the underlying data and model performance through data visualization and model evaluation features.
 
 Deployed Site: [Link to Deployed Web App](https://sdprediction.streamlit.app/)
+
 Final Project Blog Article: Link to Blog Article
+
 Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olawaleisaac/)
 
 
@@ -77,7 +79,6 @@ $ conda install matplotlib scikit-learn
 
 So we want to create a jupyter nootebook and 
 there we play around with the data and train our model.
-
 So we also want to install a kernel for this virtue environment.
 but maybe in your own case you may need to install ipython before running this command.
 
@@ -93,9 +94,11 @@ and then you click on new notebook and select ml. You can find the file in the r
 # Data Analysis
 
 - Navigate to the project directory
+
 $ cd Salary-prediction
 
 - Run Jupyter notebooks for data analysis and model development.
+
 $ jupyter notebook
 
 
