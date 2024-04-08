@@ -1,5 +1,8 @@
 # Machine Learning Web Application
 
+# Introduction
+Welcome to the Salary Prediction Web App! This project utilizes machine learning to predict salaries based on user input such as years of experience, education level, and job title. The web app provides an intuitive interface for users to obtain estimated salary ranges for various job positions.
+
 # Project Overview:
 
 The Machine Learning Web Application provides a user-friendly interface for interacting with a machine learning model trained on real-world data. Built using Python and the Streamlit framework, this application allows users to select input features, input data, and obtain predictions from the model in real-time. It also includes features for data visualization and model evaluation.
@@ -10,10 +13,14 @@ The Machine Learning Web Application provides a user-friendly interface for inte
 - Enable users to select input features, input data, and obtain predictions from the model.
 - Enhance user understanding of the underlying data and model performance through data visualization and model evaluation features.
 
+Deployed Site: [Link to Deployed Web App](https://sdprediction.streamlit.app/)
+Final Project Blog Article: Link to Blog Article
+Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olawaleisaac/)
+
+
 ## Installation:
 
 # Requirements
-
 - pandas==2.2.1
 - numpy==1.26.4
 - scikit-learn==1.4.1.post1
@@ -83,9 +90,20 @@ $ jupyter notebook
 Note: This command will automatically take you to where you will train your model
 and then you click on new notebook and select ml. You can find the file in the repository.
 
+# Data Analysis
+
+- Navigate to the project directory
+$ cd Salary-prediction
+
+- Run Jupyter notebooks for data analysis and model development.
+$ jupyter notebook
+
+
 # Data cleaning
 Firstly, we only want to keep a few columns so we want to keep the 
 column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which is the number 
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
 
 ![alt text](<DataCleaning.png>)
+
+
