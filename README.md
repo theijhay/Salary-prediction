@@ -146,7 +146,7 @@ import numpy as np
 #### Testing/running 
 - To run the web app locally, follow these steps:
 
-- Clone the repository
+#### Clone the repository
 ```
 $ git clone https://github.com/theijhay/Salary-prediction.git
 ```
