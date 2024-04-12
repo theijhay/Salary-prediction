@@ -1,4 +1,4 @@
-### Machine Learning Web Application
+## Salary Prediction Web Application
 
 ![alt text](https://i.imgur.com/eLke1Xd.png)
 
