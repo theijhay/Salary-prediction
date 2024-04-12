@@ -17,7 +17,7 @@ The Machine Learning Web Application provides a user-friendly interface for inte
 
 Deployed Site: [Link to Deployed Web App](https://sdprediction.streamlit.app/)
 
-Final Project Blog Article: Link to Blog Article
+Final Project Blog Article:[Link to Blog Article](https://www.linkedin.com/pulse/empowering-careers-building-data-driven-salary-prediction-isaac-8bijf/)
 
 Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olawaleisaac/)
 
@@ -38,13 +38,11 @@ $ pip install -r requirements.txt
 
 # Setup
 - Create the project directory
-
 ```
 $ mkdir Salary-prediction 
 ``` 
 
 - Navigate to the project directory
-
 ```
 $ cd Salary-prediction
 ```
@@ -57,13 +55,11 @@ Download the real-world dataset(s) and place it into the data directory.
 
 
 - Create a virtue evironment for the project
-
 ```
 $ python3 -m venv venv
 ```
 
 - Active the virtue environment
-
 ```
 $ source venv/bin/activate 
 ```
@@ -72,19 +68,16 @@ But in this case I used conda environment.
 - Click on this link [conda](https://docs.anaconda.com/free/miniconda/#quick-command-line-install) to install it.
 
 - Create a new environment name "ml" with Python3.11 version
-
 ```
 $ conda create -n ml python=3.11
 ```
 
 - Activate the environment
-
 ```
 $ conda activate ml
 ```
 
 # Install the packages
-
 ```
 $ conda install streamlit
 $ conda install numpy pandas
