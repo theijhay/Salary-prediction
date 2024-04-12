@@ -99,8 +99,13 @@ Firstly, we only want to keep a few columns so we want to keep the
 column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which is the number 
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
 
-# Data Analysis
+```
+# Select relevant columns
+df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
+df = df.rename({"ConvertedComp": "Salary"}, axis=1)
+```
 
+# Data Analysis
 - Navigate to the project directory
 
 $ cd Salary-prediction
