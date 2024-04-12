@@ -147,7 +147,6 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 from sklearn.model_selection import GridSearchCV
 import joblib
 import numpy as np
-
 ```
 
 
@@ -155,18 +154,22 @@ import numpy as np
 - To run the web app locally, follow these steps:
 
 # Clone the repository
+```
 $ git clone https://github.com/theijhay/Salary-prediction.git
-
+```
 # Navigate to the project directory
+```
 $ cd salary-prediction
-
+```
 # Install the required dependencies
+```
 $ pip install -r requirements.txt
-
+```
 # Usage
 - Start the Streamlit app
-
+```
 $ streamlit run app.py
+```
 
 - Open a web browser and navigate to the provided local URL to access the web app.
 - Enter the required information such as years of experience, education level, and job title.
