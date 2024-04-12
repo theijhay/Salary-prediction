@@ -175,9 +175,6 @@ random_forest_reg = RandomForestRegressor(random_state=0)
 random_forest_reg.fit(X_train, y_train)
 y_pred_rf = random_forest_reg.predict(X_test)
 error_rf = np.sqrt(mean_squared_error(y_test, y_pred_rf))
-print(f"Random Forest Error: ${error_rf:,.2f}")
-     
-Random Forest Error: $31,462.88
 ```
 
 **Linear Regression:** Linear regression is another suitable algorithm for predicting salaries, especially when there's a linear relationship between the input features and the target variable (salary). It's a simple yet effective algorithm commonly used for regression tasks.
@@ -188,9 +185,6 @@ linear_reg = LinearRegression()
 linear_reg.fit(X_train, y_train)
 y_pred_linear = linear_reg.predict(X_test)
 error_linear = np.sqrt(mean_squared_error(y_test, y_pred_linear))
-print(f"Linear Regression Error: ${error_linear:,.2f}")
-     
-Linear Regression Error: $38,698.95
 ```
 
 **Decision Trees:** Decision trees can also be employed for predicting salaries. They're useful for capturing nonlinear relationships between features and the target variable. Decision trees are easy to interpret and can handle both numerical and categorical data.
@@ -201,13 +195,11 @@ dec_tree_reg = DecisionTreeRegressor(random_state=0)
 dec_tree_reg.fit(X_train, y_train)
 y_pred_tree = dec_tree_reg.predict(X_test)
 error_tree = np.sqrt(mean_squared_error(y_test, y_pred_tree))
-print(f"Decision Tree Error: ${error_tree:,.2f}")
-     
-Decision Tree Error: $32,023.20
 ```
 #### Hyperparameter tuning for Decision Tree using GridSearchCV
 ```
 # Hyperparameter tuning for Decision Tree using GridSearchCV
+
 max_depth = [None, 2, 4, 6, 8, 10, 12]
 parameters = {"max_depth": max_depth}
 regressor = DecisionTreeRegressor(random_state=0)
@@ -217,9 +209,6 @@ regressor_tuned = gs.best_estimator_
 
 y_pred_tuned = regressor_tuned.predict(X_test)
 error_tuned = np.sqrt(mean_squared_error(y_test, y_pred_tuned))
-print(f"Tuned Decision Tree Error: ${error_tuned:,.2f}")
-     
-Tuned Decision Tree Error: $31,058.92
 ```
 #### Save the trained model
 
