@@ -124,14 +124,31 @@ df = df.rename({"ConvertedComp": "Salary"}, axis=1)
 # Data Analysis
 - Navigate to the project directory
 
+```
 $ cd Salary-prediction
-
+```
 - Run Jupyter notebooks for data analysis and training of the model.
 
+```
 $ jupyter notebook
-
+```
 This command will automatically take you to where you will train your model
-and then you click on new notebook and select ml, and start importing the librabries needed for project. You can find the file in the repository.
+and then you click on new notebook and select ml, and start importing the librabries needed for project. You can find the file in the repository ends with ipynb.
+
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.model_selection import GridSearchCV
+import joblib
+import numpy as np
+```
+
 
 # Testing/running 
 - To run the web app locally, follow these steps:
