@@ -17,7 +17,7 @@ The Machine Learning Web Application provides a user-friendly interface for inte
 
 Deployed Site: [Link to Deployed Web App](https://sdprediction.streamlit.app/)
 
-Final Project Blog Article:[Link to Blog Article](https://www.linkedin.com/pulse/empowering-careers-building-data-driven-salary-prediction-isaac-8bijf/)
+Final Project Blog Article: [Link to Blog Article](https://www.linkedin.com/pulse/empowering-careers-building-data-driven-salary-prediction-isaac-8bijf/)
 
 Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olawaleisaac/)
 
@@ -49,7 +49,7 @@ $ cd Salary-prediction
 
 #### Data Collection
 
-Download the real-world dataset(s) and place it into the data directory.
+Download the real-world dataset(s) and place it into the project directory.
 
 [Stack Overflow Survey Data](https://insights.stackoverflow.com/survey)
 
@@ -65,7 +65,9 @@ $ source venv/bin/activate
 ```
 
 But in this case I used conda environment.
-- Click on this link [conda](https://docs.anaconda.com/free/miniconda/#quick-command-line-install) to install it.
+- Click on this link [conda](https://docs.anaconda.com/free/miniconda/#quick-command-line-install) to install it. 
+Anaconda provides a simple double-click installer for your
+convenience.
 
 - Create a new environment name "ml" with Python3.11 version
 ```
@@ -99,8 +101,19 @@ Now we can start our jupyter notebook server
 $ jupyter notebook
 ```
 
-Note: This command will automatically take you to where you will train your model
-and then you click on new notebook and select ml. You can find the file in the repository.
+This notebook uses several Python packages that come standard with the Anaconda
+Python distribution. The primary libraries that we'll be using are:
+
+**NumPy**: Provides a fast numerical array structure and helper functions.
+
+**pandas**: Provides a DataFrame structure to store data in memory and work with
+it easily and efficiently.
+
+**scikit-learn**: The essential Machine Learning package for a variaty of
+supervised learning models, in Python.
+
+**matplotlib**: Basic plotting library in Python; most other Python plotting
+libraries are built on top of it.
 
 
 #### Data cleaning
@@ -129,6 +142,8 @@ This command will automatically take you to where you will train your model
 and then you click on new notebook and select ml, and start importing the librabries needed for project. You can find the file in the repository ends with ipynb.
 
 ```
+# models
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -143,8 +158,113 @@ import numpy as np
 ```
 
 
-#### Testing/running 
-- To run the web app locally, follow these steps:
+#### Training & Testing
+
+For the Salary Prediction, I simply trained three models to predict the salary.
+
+```
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+**Random Forest Regression:** This ensemble learning algorithm can be used for regression tasks, such as predicting salaries based on input features like years of experience, education level, and job title. Random forests are known for their robustness and ability to handle complex relationships in the data.
+```
+# Train a Random Forest model
+
+random_forest_reg = RandomForestRegressor(random_state=0)
+random_forest_reg.fit(X_train, y_train)
+y_pred_rf = random_forest_reg.predict(X_test)
+error_rf = np.sqrt(mean_squared_error(y_test, y_pred_rf))
+print(f"Random Forest Error: ${error_rf:,.2f}")
+     
+Random Forest Error: $31,462.88
+```
+
+**Linear Regression:** Linear regression is another suitable algorithm for predicting salaries, especially when there's a linear relationship between the input features and the target variable (salary). It's a simple yet effective algorithm commonly used for regression tasks.
+```
+# Train a Linear Regression model
+
+linear_reg = LinearRegression()
+linear_reg.fit(X_train, y_train)
+y_pred_linear = linear_reg.predict(X_test)
+error_linear = np.sqrt(mean_squared_error(y_test, y_pred_linear))
+print(f"Linear Regression Error: ${error_linear:,.2f}")
+     
+Linear Regression Error: $38,698.95
+```
+
+**Decision Trees:** Decision trees can also be employed for predicting salaries. They're useful for capturing nonlinear relationships between features and the target variable. Decision trees are easy to interpret and can handle both numerical and categorical data.
+```
+# Train a Decision Tree model
+
+dec_tree_reg = DecisionTreeRegressor(random_state=0)
+dec_tree_reg.fit(X_train, y_train)
+y_pred_tree = dec_tree_reg.predict(X_test)
+error_tree = np.sqrt(mean_squared_error(y_test, y_pred_tree))
+print(f"Decision Tree Error: ${error_tree:,.2f}")
+     
+Decision Tree Error: $32,023.20
+```
+#### Hyperparameter tuning for Decision Tree using GridSearchCV
+```
+# Hyperparameter tuning for Decision Tree using GridSearchCV
+max_depth = [None, 2, 4, 6, 8, 10, 12]
+parameters = {"max_depth": max_depth}
+regressor = DecisionTreeRegressor(random_state=0)
+gs = GridSearchCV(regressor, parameters, scoring='neg_mean_squared_error')
+gs.fit(X_train, y_train)
+regressor_tuned = gs.best_estimator_
+
+y_pred_tuned = regressor_tuned.predict(X_test)
+error_tuned = np.sqrt(mean_squared_error(y_test, y_pred_tuned))
+print(f"Tuned Decision Tree Error: ${error_tuned:,.2f}")
+     
+Tuned Decision Tree Error: $31,058.92
+```
+#### Save the trained model
+
+You can save the trained models using either the pickle module or the joblib library in Python. But here I saved the trained model using joblib because I'm dealing with a large dataset, so joblib is my champion. Its speed and memory efficiency are invaluable assets for serious machine learning endeavors
+```
+# Save the trained model and encoders
+
+data = {"model": regressor_tuned, "le_country": le_country, "le_education": le_education}
+with open('saved_steps.joblib', 'wb') as file:
+    joblib.dump(data, file)
+```
+#### Load the model and encoders
+
+Let's load the model and encoders
+```
+# Load the model and encoders
+
+with open('saved_steps.joblib', 'rb') as file:
+    loaded_data = joblib.load(file)
+
+regressor_loaded = loaded_data["model"]
+le_country_loaded = loaded_data["le_country"]
+le_education_loaded = loaded_data["le_education"]
+```
+#### Testing
+
+Let's test the loaded model
+```
+# Test the loaded model
+
+X_example = np.array([[le_country_loaded.transform(['United States'])[0], le_education_loaded.transform(['Master’s degree'])[0], 15]])
+X_example = X_example.astype(float)
+y_pred_example = regressor_loaded.predict(X_example)
+print(f"Predicted Salary: ${y_pred_example[0]:,.2f}")
+```
+#### The result
+
+Now, you can see the output of our trained models.
+```
+Predicted Salary: $143,285.07
+
+/home/jhay-tech/miniconda3/envs/ml/lib/python3.11/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeRegressor was fitted with feature names
+  warnings.warn(
+``` 
+### To run the web app locally, follow these steps:
 
 #### Clone the repository
 ```
