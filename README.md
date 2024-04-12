@@ -1,15 +1,15 @@
-# Machine Learning Web Application
+### Machine Learning Web Application
 
 ![alt text](https://i.imgur.com/eLke1Xd.png)
 
-# Introduction
+### Introduction
 Welcome to the Salary Prediction Web App! This project utilizes machine learning to predict salaries based on user input such as years of experience, education level, and job title. The web app provides an intuitive interface for users to obtain estimated salary ranges for various job positions.
 
-# Project Overview:
+### Project Overview:
 
 The Machine Learning Web Application provides a user-friendly interface for interacting with a machine learning model trained on real-world data. Built using Python and the Streamlit framework, this application allows users to select input features, input data, and obtain predictions from the model in real-time. It also includes features for data visualization and model evaluation.
 
-# Project Goals:
+### Project Goals:
 
 - Provide an intuitive web-based interface for users to interact with a machine learning model.
 - Enable users to select input features, input data, and obtain predictions from the model.
@@ -22,9 +22,9 @@ Final Project Blog Article:[Link to Blog Article](https://www.linkedin.com/pulse
 Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olawaleisaac/)
 
 
-## Installation:
+# Installation:
 
-# Requirements
+#### Requirements
 - pandas==2.2.1
 - numpy==1.26.4
 - scikit-learn==1.4.1.post1
@@ -36,7 +36,7 @@ Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olaw
 $ pip install -r requirements.txt 
 ```
 
-# Setup
+#### Setup
 - Create the project directory
 ```
 $ mkdir Salary-prediction 
@@ -47,7 +47,7 @@ $ mkdir Salary-prediction
 $ cd Salary-prediction
 ```
 
-# Data Collection
+#### Data Collection
 
 Download the real-world dataset(s) and place it into the data directory.
 
@@ -77,7 +77,7 @@ $ conda create -n ml python=3.11
 $ conda activate ml
 ```
 
-# Install the packages
+#### Install the packages
 ```
 $ conda install streamlit
 $ conda install numpy pandas
@@ -103,7 +103,7 @@ Note: This command will automatically take you to where you will train your mode
 and then you click on new notebook and select ml. You can find the file in the repository.
 
 
-# Data cleaning
+#### Data cleaning
 Firstly, we only want to keep a few columns so we want to keep the 
 column 'Country', 'EdLevel' which is the education level, 'YearsCodePro' which is the number 
 of the years of the professional experience, 'Employment' for example if the developer is working full time,'ConvertedComp' so this is the salary converted to US dollars, and the 'salary' so this is what we want to keep.
@@ -114,7 +114,7 @@ df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
 df = df.rename({"ConvertedComp": "Salary"}, axis=1)
 ```
 
-# Data Analysis
+#### Data Analysis
 - Navigate to the project directory
 
 ```
@@ -143,22 +143,22 @@ import numpy as np
 ```
 
 
-# Testing/running 
+#### Testing/running 
 - To run the web app locally, follow these steps:
 
-# Clone the repository
+- Clone the repository
 ```
 $ git clone https://github.com/theijhay/Salary-prediction.git
 ```
-# Navigate to the project directory
+#### Navigate to the project directory
 ```
 $ cd salary-prediction
 ```
-# Install the required dependencies
+##### Install the required dependencies
 ```
 $ pip install -r requirements.txt
 ```
-# Usage
+#### Usage
 - Start the Streamlit app
 ```
 $ streamlit run app.py
@@ -178,8 +178,8 @@ $ streamlit run app.py
 4. Push to the branch (git push origin feature-branch).
 5. Create a new Pull Request and describe your changes.
 
-# Bug Fixes
+#### Bug Fixes
 None yet
 
-# Licensing
+### Licensing
 This project is licensed under the MIT License - see the LICENSE file for details.
