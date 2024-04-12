@@ -64,7 +64,8 @@ $ python3 -m venv venv
 
 - Active the virtue environment
 
-```$ source venv/bin/activate 
+```
+$ source venv/bin/activate 
 ```
 
 But in this case I used conda environment.
@@ -86,11 +87,7 @@ $ conda activate ml
 
 ```
 $ conda install streamlit
-```
-```
 $ conda install numpy pandas
-```
-```
 $ conda install matplotlib scikit-learn
 ```
 
