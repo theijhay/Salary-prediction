@@ -32,18 +32,21 @@ Author(s) LinkedIn: [Author's LinkedIn Profile](https://www.linkedin.com/in/olaw
 - matplotlib==3.8.0
 - joblib==1.3.2
 
-```$ pip install -r requirements.txt 
+```
+$ pip install -r requirements.txt 
 ```
 
 # Setup
 - Create the project directory
 
-```$ mkdir Salary-prediction 
+```
+$ mkdir Salary-prediction 
 ``` 
 
 - Navigate to the project directory
 
-```$ cd Salary-prediction
+```
+$ cd Salary-prediction
 ```
 
 # Data Collection
@@ -55,7 +58,8 @@ Download the real-world dataset(s) and place it into the data directory.
 
 - Create a virtue evironment for the project
 
-```$ python3 -m venv venv
+```
+$ python3 -m venv venv
 ```
 
 - Active the virtue environment
@@ -68,21 +72,26 @@ But in this case I used conda environment.
 
 - Create a new environment name "ml" with Python3.11 version
 
-```$ conda create -n ml python=3.11
+```
+$ conda create -n ml python=3.11
 ```
 
 - Activate the environment
 
-```$ conda activate ml
+```
+$ conda activate ml
 ```
 
 # Install the packages
 
-```$ conda install streamlit
 ```
-```$ conda install numpy pandas
+$ conda install streamlit
 ```
-```$ conda install matplotlib scikit-learn
+```
+$ conda install numpy pandas
+```
+```
+$ conda install matplotlib scikit-learn
 ```
 
 So we want to create a jupyter nootebook and 
@@ -90,12 +99,14 @@ there we play around with the data and train our model.
 So we also want to install a kernel for this virtue environment.
 but maybe in your own case you may need to install ipython before running this command.
 
-```$ ipyhon kernel install --user --name=ml
+```
+$ ipyhon kernel install --user --name=ml
 ```
 
 Now we can start our jupyter notebook server
 
-```$ jupyter notebook
+```
+$ jupyter notebook
 ```
 
 Note: This command will automatically take you to where you will train your model
